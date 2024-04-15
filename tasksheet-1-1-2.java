@@ -15,6 +15,6 @@ int result = 1 + 2; // result is now 3
         result = result + 8; // result is now 10
         result = result % 7; // result is now 3
         System.out.println(result);
-
+    
     }
 }
