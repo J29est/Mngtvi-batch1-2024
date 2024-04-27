@@ -1,4 +1,4 @@
-public class task3 {
+class task3 {
     public static void main(String[] args) {
         int check_number = 10;
         String message=new String();
