@@ -1,4 +1,5 @@
 import java.util.*;
+
 class tasksheet8 {
     static int cumulativeSumI(int a, int b, int c){
         return sumOfNumber(a)+sumOfNumber(b)+sumOfNumber(c);
