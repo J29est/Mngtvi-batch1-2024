@@ -1,26 +1,32 @@
- class Car extends Vehicle{
-   int numberOfDoors; 
-   void displayDetails(){
-      System.out.println("Car Details: \nMake: "+this.Make+"
-      \nModel: "this.Model+"
-      \nYear: "+this.year+"
-      \nNumber of doors: "this.numberOfDoors);
-   }
-   Car(String Make,String  model,int year,int numberOfDoors) {
-    super();
-
-   }
+class tasksheet11{
    public static void main(String[] args) {
-    
-      private String Make;
-      private String  model;
-      return "volvo"; 
+    Car c1 = new Car("Nissan", "Nissan Z", 2024, 4);
+    Car c2 = new Car("Mitsubishi","Montero Sport", 2024, 4);
+    c1.displayDetails();
+    c2.displayDetails();
    }
-String model;
-public String getName(){
-   return "C40SUV";
-
-
 }
- }
+class Vehicle {
+      String make;
+      String  model;
+      int year; 
+    Vehicle(String make, String model, int year){ 
+     this.make = make;
+     this.model = model; 
+     this.year = year;
+    }
+   }
+
+   class Car extends Vehicle {
+      int numberOfDoors;
+      Car (String make, String model, int year, int numberOfDoors){
+         super(make, model, year); 
+        this.numberOfDoors = numberOfDoors;
+      }
+void displayDetails(){
+   System.out.println("Car Details:\nMake: "+this.make+"\nModel: "+this.model+"\nYear: "+this.year+"\nNumber of Doors: "+this.numberOfDoors+"\n");
+}
+   }      
+   
+
    
