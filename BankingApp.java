@@ -29,8 +29,8 @@ while (!loggedIn) {
 boolean running = true;
 while (running) {
     System.out.println("\n1. Check Balance");
-    System.out.println("2. Deposit");
-    System.out.println("3. Express Send");
+    System.out.println("2. Cash In");
+    System.out.println("3. Money Transfer");
     System.out.println("4. Quit");
     System.out.println("\nSelect an option");
     int option = scanner.nextInt();
@@ -40,21 +40,21 @@ while (running) {
             System.out.println("Current balance: " + loggedInUser.getBalance());
             break;
         case 2: 
-            System.out.println("Enter amount to deposit: ");
+            System.out.println("Enter amount to cash in: ");
             double amountToAdd = scanner.nextDouble();
-            loggedInUser.deposit(amountToAdd);
+            loggedInUser.cashIn(amountToAdd);
             System.out.println("New balance: " + loggedInUser.getBalance());
             break;
         case 3: 
             System.out.println("Enter recipient's user ID:");
             int recipientId = scanner.nextInt();
-            System.out.println("Enter amount to send: ");
+            System.out.println("Enter amount to transfer: ");
             double amountToSend = scanner.nextDouble();
-            boolean success = loggedInUser.expressSend(bank, recipientId, amountToSend);
+            boolean success = loggedInUser.moneyTransfer(bank, recipientId, amountToSend);
             if (success){
-            System.out.println("Sent successfully!");
+            System.out.println("Money transfer successful!");
             } else {
-            System.out.println("Send failed. Check recipient ID or balance.");
+            System.out.println("Transfer failed. Check recipient ID or balance.");
             }
             break;
         case 4: 
@@ -110,7 +110,7 @@ public int getPin(){
     public double getBalance(){
    return balance;
    }
-   public void deposit(double amount){
+   public void cashIn(double amount){
     if (amount > 0){
         balance +=amount;
         }
@@ -119,7 +119,7 @@ public int getPin(){
         }
     }
 
-    public boolean expressSend (Bank bank, int recipientId, double amount){
+    public boolean moneyTransfer(Bank bank, int recipientId, double amount){
         if (amount <=0){
             System.out.println("Invalid amount.");
             return false;
@@ -134,7 +134,7 @@ if (recipient == null){
     return false;
 }
   balance -= amount;
-  recipient.deposit(amount);
+  recipient.cashIn(amount);
   return true;
 }
 }
